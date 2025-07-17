@@ -1,49 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- Biến toàn cục & Thiết lập ban đầu ---
+  const html = document.documentElement; // THAY ĐỔI: Lấy thẻ <html>
   const body = document.body;
   const header = document.querySelector(".header");
   const menuToggleButton = document.querySelector(".menu-toggle-button");
   const overlayMenu = document.getElementById("overlay-menu");
-  // KHÔNG CẦN THIẾT: Biến scrollPosition đã được loại bỏ để giải quyết lỗi "nhảy trang".
 
-  /*
-   * LƯU Ý QUAN TRỌNG VỀ CSS:
-   * Để phương pháp mới này hoạt động, bạn cần thêm quy tắc CSS sau vào file stylesheet của mình:
-   *
-   * body.no-scroll {
-   * overflow: hidden;
-   * }
-   *
-   * Quy tắc này sẽ ngăn trang cuộn khi menu được mở mà không gây ra hiệu ứng "nhảy" lên đầu trang.
-   */
+  // --- 1. Logic cho Menu Overlay (Phương pháp mới, không nhảy trang) ---
+  // Phương pháp này đơn giản hơn, chỉ cần thêm/xóa class trên thẻ <html>
+  // và để CSS xử lý. Không cần lưu/phục hồi vị trí cuộn.
 
-  // --- 1. Logic cho Menu Overlay (Phương pháp mới, không bị nhảy trang) ---
-
-  // THAY ĐỔI: Hàm closeMenu được đơn giản hóa. Không còn dùng position:fixed.
-  const closeMenu = () => {
-    if (!body.classList.contains("no-scroll")) return;
-
-    body.classList.remove("no-scroll"); // Chỉ cần xóa class là đủ
-
-    if (menuToggleButton) menuToggleButton.classList.remove("is-active");
-    if (overlayMenu) overlayMenu.classList.remove("is-active");
-  };
-
-  // THAY ĐỔI: Hàm openMenu được đơn giản hóa.
   const openMenu = () => {
-    if (body.classList.contains("no-scroll")) return;
-
-    // Chỉ cần thêm class. CSS sẽ xử lý việc khóa cuộn.
-    body.classList.add("no-scroll");
-
+    if (html.classList.contains("no-scroll")) return;
+    html.classList.add("no-scroll"); // Áp dụng class khóa cuộn cho <html>
     if (menuToggleButton) menuToggleButton.classList.add("is-active");
     if (overlayMenu) overlayMenu.classList.add("is-active");
   };
 
+  const closeMenu = () => {
+    if (!html.classList.contains("no-scroll")) return;
+    html.classList.remove("no-scroll"); // Gỡ bỏ class khóa cuộn
+    if (menuToggleButton) menuToggleButton.classList.remove("is-active");
+    if (overlayMenu) overlayMenu.classList.remove("is-active");
+  };
+
   if (menuToggleButton) {
     menuToggleButton.addEventListener("click", () => {
-      // THAY ĐỔI: Logic chuyển đổi được đơn giản hóa.
-      if (body.classList.contains("no-scroll")) {
+      if (html.classList.contains("no-scroll")) {
         closeMenu();
       } else {
         openMenu();
@@ -58,39 +41,40 @@ document.addEventListener("DOMContentLoaded", () => {
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       const href = this.getAttribute("href");
-      if (href && (href.startsWith("#") || href.includes("index.html#"))) {
-        // THAY ĐỔI: Gọi hàm closeMenu đơn giản, không cần tham số.
-        closeMenu();
 
+      // Chỉ xử lý các link điều hướng nội trang
+      if (href && (href.startsWith("#") || href.includes("index.html#"))) {
         const hashIndex = href.indexOf("#");
         const hash = href.substring(hashIndex);
 
+        // Nếu đang ở trang con và click link về trang chủ, để trình duyệt tự chuyển hướng
         if (
           !window.location.pathname.endsWith("/") &&
           !window.location.pathname.endsWith("index.html") &&
           window.location.pathname !== ""
         ) {
-          e.preventDefault();
-          window.location.href = "index.html" + hash;
+          // Không cần closeMenu() ở đây vì trang sẽ tải lại
           return;
         }
 
+        e.preventDefault();
         const targetElement = document.querySelector(hash);
-        if (targetElement) {
-          e.preventDefault();
 
-          // Sử dụng một timeout nhỏ để đảm bảo trình duyệt có thời gian
-          // xử lý việc gỡ bỏ class 'no-scroll' trước khi cuộn.
-          // Điều này giúp hành vi cuộn mượt mà và ổn định hơn.
-          setTimeout(() => {
-            const headerHeight = header ? header.offsetHeight : 0;
-            const targetPosition =
-              targetElement.getBoundingClientRect().top +
-              window.pageYOffset -
-              headerHeight;
-            window.scrollTo({ top: targetPosition, behavior: "smooth" });
-          }, 0); // Timeout 0ms là đủ để đưa tác vụ vào hàng đợi tiếp theo.
+        // Đóng menu trước khi cuộn
+        closeMenu();
+
+        if (targetElement) {
+          // Cuộn tới vị trí mong muốn. Không cần setTimeout nữa.
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerHeight;
+          window.scrollTo({ top: targetPosition, behavior: "smooth" });
         }
+      } else {
+        // Nếu là link ngoài hoặc link không có #, chỉ cần đóng menu
+        closeMenu();
       }
     });
   });
@@ -269,16 +253,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- 7. Career Path Tabs Logic ---
   const tabsContainer = document.querySelector(".career-path-tabs");
   if (tabsContainer) {
-    const tabButtons = tabsContainer.querySelectorAll(".career-tab-button");
-    const tabPanels = document.querySelectorAll(".career-path-panel");
     tabsContainer.addEventListener("click", (e) => {
       const clickedTab = e.target.closest(".career-tab-button");
       if (!clickedTab) return;
       e.preventDefault();
-      tabButtons.forEach((button) => button.classList.remove("is-active"));
+      tabsContainer
+        .querySelectorAll(".career-tab-button")
+        .forEach((button) => button.classList.remove("is-active"));
       clickedTab.classList.add("is-active");
       const targetTab = clickedTab.dataset.tab;
-      tabPanels.forEach((panel) => panel.classList.remove("is-active"));
+      document
+        .querySelectorAll(".career-path-panel")
+        .forEach((panel) => panel.classList.remove("is-active"));
       const targetPanel = document.getElementById(targetTab);
       if (targetPanel) {
         targetPanel.classList.add("is-active");
@@ -349,7 +335,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
 
-      // --- Đồng bộ hóa Hình ảnh (Kỹ thuật Cross-Fade) ---
       const imageA = document.getElementById("advisor-image-a");
       const imageB = document.getElementById("advisor-image-b");
 
@@ -361,7 +346,6 @@ document.addEventListener("DOMContentLoaded", () => {
           ? imageB
           : imageA;
 
-        // Chỉ thay đổi nếu ảnh mới thực sự khác ảnh cũ
         if (!inactiveImage.src.endsWith(supportData[currentIndex].image)) {
           inactiveImage.src = supportData[currentIndex].image;
         }
@@ -370,7 +354,6 @@ document.addEventListener("DOMContentLoaded", () => {
         inactiveImage.classList.add("is-active");
       }
 
-      // --- Cập nhật Progress Bar ---
       if (progressBar) {
         const progressPercentage =
           ((currentIndex + 1) / supportData.length) * 100;
@@ -389,7 +372,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (nextBtn) nextBtn.addEventListener("click", () => navigate("next"));
     if (prevBtn) prevBtn.addEventListener("click", () => navigate("prev"));
 
-    // Keyboard navigation
     document.addEventListener("keydown", (e) => {
       const rect = advisorSection.getBoundingClientRect();
       const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
@@ -399,7 +381,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Swipe navigation
     let touchStartX = 0;
     if (cardsContainer) {
       cardsContainer.addEventListener(
@@ -420,7 +401,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
     }
 
-    // Initialize
     renderCards();
     updateAdvisorView(currentIndex);
   }

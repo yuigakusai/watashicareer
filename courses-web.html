@@ -23,11 +23,7 @@
       <div class="container header-container">
         <div class="logo">
           <a href="index.html">
-            <img
-              src="assets/images/image-2.png"
-              alt="わたしキャリア Logo"
-              onerror="this.onerror=null;this.src='https://placehold.co/200x50/FEFBF6/4E4247?text=Watashi+Career&font=lora';"
-            />
+            <img src="assets/images/image-2.png" alt="わたしキャリア Logo" />
           </a>
         </div>
         <button class="menu-toggle-button" aria-label="メニューを開く">
@@ -58,18 +54,38 @@
             <a href="index.html#courses">コース</a> &gt;
             <span>Web・デザイン・マーケティング</span>
           </div>
-          <div class="page-banner">
+          <div
+            class="page-banner"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 32px;
+              text-align: left;
+              background: none;
+            "
+          >
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+              src="assets/images/course4.png"
               alt="Creative workspace"
               class="page-banner-image"
-              onerror="this.onerror=null;this.src='https://placehold.co/1100x250/F9F1F4/4E4247?text=Web+%26+Design';"
+              style="
+                position: static;
+                width: 170px;
+                height: 170px;
+                object-fit: cover;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+                z-index: 1;
+              "
             />
-            <h1 class="page-header-title">Web・デザイン・マーケティング</h1>
+            <div style="z-index: 2; max-width: 700px">
+              <h1 class="page-header-title">Web・デザイン・マーケティング</h1>
+              <p class="page-header-subtitle">
+                クリエイティブなスキルで、アイデアを形に。Webサイト制作、デザイン、SNS運用など、あなたの「好き」を仕事にするためのコースが揃っています。
+              </p>
+            </div>
           </div>
-          <p class="page-header-subtitle">
-            クリエイティブなスキルで、アイデアを形に。Webサイト制作、デザイン、SNS運用など、あなたの「好き」を仕事にするためのコースが揃っています。
-          </p>
         </div>
       </section>
 
