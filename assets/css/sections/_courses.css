@@ -1,0 +1,436 @@
+/* --- File: sections/_courses.css --- */
+.courses-section {
+  background-color: white;
+  padding-bottom: 100px;
+}
+.courses-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.courses-header .section-title {
+  margin-bottom: 10px;
+}
+.courses-header .section-subtitle {
+  margin-bottom: 10px;
+}
+.course-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+.course-showcase-item {
+  position: relative;
+  transition: transform 0.3s ease;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.course-showcase-item:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+.course-showcase-image-wrapper {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.08);
+}
+.course-showcase-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+}
+.course-showcase-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 16px 90px rgba(0, 0, 0, 0.08);
+  margin: -80px 10px 0 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 230px;
+}
+.content-wrapper {
+  flex-grow: 1;
+}
+.course-showcase-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--accent-secondary);
+  transition: color 0.3s ease;
+}
+.course-showcase-item:hover .course-showcase-title {
+  color: var(--accent-secondary);
+}
+.course-showcase-description {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.course-showcase-cta {
+  display: block;
+  position: relative;
+  margin: 0 -15px -15px -15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  overflow: hidden;
+  height: 35px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.course-showcase-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-main);
+  z-index: 1;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.cta-text {
+  position: absolute;
+  top: 50%;
+  left: 57%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.cta-text-default {
+  color: var(--text-dark);
+  opacity: 1;
+}
+
+.cta-text-hover {
+  color: var(--text-light);
+  opacity: 0;
+}
+
+.course-showcase-item:hover .course-showcase-cta::before {
+  transform: translateY(0);
+}
+
+.course-showcase-item:hover .cta-text-default {
+  opacity: 0;
+}
+
+.course-showcase-item:hover .cta-text-hover {
+  opacity: 1;
+}
+
+/* --- File: sections/_courses.css --- */
+/* =================================
+  Course Page Styles V2
+==================================== */
+
+/* 1. Page Header (New Design) */
+.page-header {
+  padding-top: 140px; /* Bù cho header và tạo khoảng trống */
+  padding-bottom: 60px;
+  background-color: white;
+}
+
+.breadcrumbs {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #888;
+}
+
+.breadcrumbs a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.page-banner {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.page-banner-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.page-banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Lớp phủ tối nhẹ để chữ nổi bật */
+  z-index: 2;
+}
+
+.page-header-title {
+  position: relative;
+  z-index: 3;
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.page-header-subtitle {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px;
+  margin: 24px auto 0 auto; /* Canh giữa và tạo khoảng cách */
+  text-align: center;
+}
+
+/* 2. Course List Section */
+.course-list-section {
+  padding: 0 0 100px 0;
+  background-color: white;
+}
+
+.course-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+/* Dành cho trang có nhiều khóa học hơn */
+.course-list-grid.large-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.course-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.course-card-header h4 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.course-card-header p {
+  font-size: 14px;
+  color: #777;
+  min-height: 40px;
+}
+.course-card-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+.course-card-meta .difficulty-tag {
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.course-card-meta .duration {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+}
+.course-card-body {
+  flex-grow: 1;
+}
+.course-card-body h5 {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+.course-card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-chip {
+  background: var(--bg-main);
+  color: var(--text-dark);
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.course-card-footer {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 3. Roadmap Section */
+.roadmap-section {
+  padding: 100px 0;
+  background-color: var(--bg-roadmap, #fdf8f4);
+}
+.roadmap-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.roadmap-container::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: var(--accent-primary);
+  opacity: 0.3;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+.roadmap-step {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+}
+.roadmap-step::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -12.5px;
+  background-color: white;
+  border: 4px solid var(--accent-roadmap-step, #e57373);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.roadmap-step.left {
+  left: 0;
+  text-align: right;
+}
+.roadmap-step.right {
+  left: 50%;
+  text-align: left;
+}
+.roadmap-step.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+.roadmap-step.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+.roadmap-content {
+  padding: 20px 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.roadmap-step-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--accent-roadmap-step, #e57373);
+}
+.roadmap-step-course {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 8px;
+}
+.roadmap-step-desc {
+  margin-top: 8px;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .course-list-grid,
+  .course-list-grid.large-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .page-header-title {
+    font-size: 32px;
+  }
+  .course-list-grid,
+  .course-list-grid.large-grid {
+    grid-template-columns: 1fr;
+  }
+  .roadmap-container::after {
+    left: 31px;
+  }
+  .roadmap-step {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .roadmap-step::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  .roadmap-step.left::after,
+  .roadmap-step.right::after {
+    left: 18px;
+  }
+  .roadmap-step.right {
+    left: 0%;
+  }
+  .roadmap-step.left {
+    text-align: left;
+  }
+}

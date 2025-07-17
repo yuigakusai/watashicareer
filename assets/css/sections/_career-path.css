@@ -1,0 +1,358 @@
+.career-path-section {
+  padding: 100px 0;
+  background-color: white;
+}
+
+.career-path-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+.career-tab-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  color: var(--border-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 230px;
+}
+.career-tab-button svg {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+.career-tab-button:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--accent-primary);
+  color: var(--border-color);
+}
+.career-tab-button.is-active {
+  background: var(--gradient-main);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(169, 92, 141, 0.3);
+}
+
+/* --- Tab Content --- */
+.career-path-content-wrapper {
+  background-color: white;
+  /* border: 2px solid var(--accent-secondary); */
+  box-shadow: 0 4px 15px rgba(169, 92, 141, 0.3);
+  border-radius: 8px;
+  padding: 40px;
+  margin-bottom: 20px;
+}
+.career-path-panel {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.career-path-panel.is-active {
+  display: block;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.plan-description {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--accent-secondary);
+}
+.plan-table-header {
+  display: flex;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-dark);
+  padding-bottom: 12px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 12px;
+}
+.plan-table-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+}
+.plan-table-row:last-child {
+  border-bottom: none;
+}
+.plan-col-1 {
+  flex: 3;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.plan-col-2 {
+  flex: 3;
+  color: #555;
+}
+.plan-col-3 {
+  flex: 4;
+  color: #555;
+}
+.career-icon {
+  color: var(--accent-secondary);
+  flex-shrink: 0;
+}
+.career-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+/* --- The Personal Advisor Section (Original Design) --- */
+.advisor-section {
+  background-color: white;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 150px;
+  padding-top: 100px;
+}
+
+.support-title {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.advisor-stage {
+  position: relative;
+  max-width: 900px;
+  height: 420px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.advisor-image-wrapper {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.advisor-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  max-width: 350px;
+  object-fit: contain;
+  object-position: bottom;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.advisor-image.is-active {
+  opacity: 1;
+}
+
+.advisor-interactive-area {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  z-index: 2;
+  top: 100px;
+  min-height: 170px;
+}
+
+.info-card-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  /* box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4); */
+  z-index: 1;
+}
+
+.advisor-info-cards {
+  position: relative;
+  width: 100%;
+  min-height: 170px;
+  z-index: 2;
+}
+
+.info-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transform: translateX(40px);
+  visibility: hidden;
+}
+.info-card.is-prev {
+  transform: translateX(-100%); /* Đã trượt qua, ẩn bên trái */
+  opacity: 0;
+}
+.info-card.is-active {
+  transform: translateX(0); /* Ở giữa, hiển thị */
+  opacity: 1;
+  z-index: 2;
+  visibility: visible;
+}
+.info-card.is-next {
+  transform: translateX(100%); /* Sắp trượt tới, ẩn bên phải */
+  opacity: 0;
+}
+
+.info-card .panel-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  position: absolute;
+  top: 20px;
+  right: 42px;
+  line-height: 1;
+  opacity: 0.6;
+}
+
+.info-card h4 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--accent-secondary);
+}
+
+.info-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4e4247;
+}
+/* --- Navigation --- */
+.advisor-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3; /* Nằm trên cùng để nhận click */
+}
+.advisor-nav-btn {
+  position: absolute;
+  top: 50%; /* Đặt nút ở giữa chiều cao của card */
+  transform: translateY(-50%); /* Căn giữa chính xác */
+  z-index: 5;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--accent-secondary);
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Reset padding */
+  transition: all 0.3s ease;
+}
+
+.advisor-nav-btn:hover {
+  background-color: white;
+  transform: translateY(-50%) scale(1.1); /* Hiệu ứng phóng to khi hover */
+}
+
+/* Thêm đoạn này để style cho icon SVG bên trong nút */
+.advisor-nav-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--border-color);
+  stroke-width: 2.5;
+  fill: none;
+}
+#advisor-prev-btn {
+  left: -22px;
+}
+#advisor-next-btn {
+  right: -22px;
+}
+.advisor-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: transparent;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  overflow: hidden;
+}
+
+.advisor-progress-bar {
+  width: 25%;
+  height: 100%;
+  border-radius: 2px;
+  background-color: var(--border-color);
+  transition: width 0.4s ease;
+}
+/* --- Responsive for Advisor --- */
+@media (max-width: 768px) {
+  .advisor-stage {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .advisor-image-wrapper {
+    height: 380px;
+  }
+  .advisor-interactive-area {
+    margin-top: -150px;
+    width: calc(100% - 40px);
+  }
+  .advisor-info-cards {
+    height: auto;
+  }
+  .info-card {
+    padding: 24px;
+  }
+  .info-card h4 {
+    font-size: 22px;
+  }
+  .info-card p {
+    font-size: 15px;
+  }
+  #advisor-prev-btn {
+    left: -15px;
+  }
+  #advisor-next-btn {
+    right: -15px;
+  }
+}

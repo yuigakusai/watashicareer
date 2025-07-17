@@ -1,0 +1,146 @@
+/* =================================
+  RESPONSIVE STYLES
+==================================== */
+
+/* --- Breakpoint: 992px (Tablets and smaller) --- */
+@media (max-width: 992px) {
+  /* Layout */
+  .header {
+    background-color: rgba(254, 251, 246, 0.95);
+  }
+  .main-nav {
+    display: none;
+  }
+  .menu-toggle-button {
+    display: flex;
+  }
+  .hero-section {
+    height: auto;
+    padding: 120px 0 80px 0;
+  }
+  .hero-background {
+    display: none;
+  }
+  .hero-container {
+    flex-direction: column;
+  }
+  .hero-image-column {
+    width: 80%;
+    margin-top: 40px;
+    padding: 0;
+    order: 2;
+  }
+  .hero-text-column {
+    width: 100%;
+    text-align: center;
+    order: 1;
+    padding-left: 0;
+  }
+
+  /* Sections */
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .course-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+  .story-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .story-content-column {
+    width: 100%;
+    text-align: center;
+  }
+  .story-avatars-column {
+    display: none; /* ẨN giao diện desktop */
+  }
+  .story-mobile-slider {
+    display: flex; /* HIỆN giao diện mobile */
+  }
+  .story-controls {
+    justify-content: center;
+  }
+}
+
+/* --- Breakpoint: 768px (Mobiles) --- */
+@media (max-width: 768px) {
+  /* Typography */
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+  .faq-question {
+    font-size: 18px;
+  }
+  .final-cta-title {
+    font-size: 32px;
+  }
+
+  /* Sections */
+  .empathy-stats-grid,
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .career-path-content-wrapper {
+    padding: 24px;
+  }
+  .plan-table-row,
+  .plan-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 0;
+  }
+  .plan-table-header {
+    display: none;
+  }
+  .plan-col-1,
+  .plan-col-2,
+  .plan-col-3 {
+    flex: none;
+    width: 100%;
+  }
+  .plan-col-2::before,
+  .plan-col-3::before {
+    font-weight: 700;
+    color: #888;
+    margin-right: 8px;
+  }
+  #stable .plan-col-2::before {
+    content: "働き方:";
+  }
+  #stable .plan-col-3::before {
+    content: "スキル例:";
+  }
+  #flexible .plan-col-2::before {
+    content: "案件内容:";
+  }
+  #flexible .plan-col-3::before {
+    content: "収入目安:";
+  }
+  #entrepreneur .plan-col-2::before {
+    content: "事業例:";
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-showcase-image {
+    height: 250px;
+  }
+  .course-showcase-content {
+    margin: -60px 15px 0 15px;
+    min-height: auto;
+  }
+  .course-showcase-title a {
+    font-size: 22px;
+  }
+}

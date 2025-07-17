@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>プログラミング・エンジニアコース一覧 - わたしキャリア</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Files (Sử dụng chung từ trang chủ) -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- CSS dành riêng cho trang này (Tái sử dụng từ trang trước) -->
+    <link rel="stylesheet" href="assets/css/courses.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-container">
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="assets/images/image-2.png"
+              alt="わたしキャリア Logo"
+              onerror="this.onerror=null;this.src='https://placehold.co/200x50/FEFBF6/4E4247?text=Watashi+Career&font=lora';"
+            />
+          </a>
+        </div>
+        <button class="menu-toggle-button" aria-label="メニューを開く">
+          <span class="hamburger-icon"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu Overlay (Tái sử dụng từ trang chủ) -->
+    <div id="overlay-menu" class="overlay-menu">
+      <nav class="overlay-nav">
+        <a href="index.html#reasons" class="overlay-nav-link">選ばれる理由</a>
+        <a href="index.html#services" class="overlay-nav-link">サービス</a>
+        <a href="index.html#skills" class="overlay-nav-link">学べるスキル</a>
+        <a href="index.html#story" class="overlay-nav-link">受講者の声</a>
+        <a href="index.html#faq" class="overlay-nav-link">よくある質問</a>
+      </nav>
+      <div class="overlay-cta">
+        <a href="index.html#contact" class="cta-button">無料キャリア相談</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- 1. Page Header -->
+      <section class="page-header">
+        <div class="container">
+          <div class="breadcrumbs">
+            <a href="index.html">ホーム</a> &gt;
+
+            <a href="index.html#courses">コース</a> &gt;
+
+            <span>プログラミング・エンジニア</span>
+          </div>
+          <div class="page-banner">
+            <img
+              src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop"
+              alt="Programming code on a screen"
+              class="page-banner-image"
+              onerror="this.onerror=null;this.src='https://placehold.co/1100x250/F9F1F4/4E4247?text=Programming';"
+            />
+            <h1 class="page-header-title">プログラミング・エンジニア</h1>
+          </div>
+          <p class="page-header-subtitle">
+            ロジックと創造力で、未来を構築する。Webアプリ開発からシステム構築まで、専門的な技術を身につけたい本格派志向の方へ。
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. Course List Section -->
+      <section class="course-list-section">
+        <div class="container">
+          <div class="course-list-grid large-grid">
+            <!-- Card 1: プログラマー（Web系） -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>プログラマー（Web系）</h4>
+                <p>Webアプリや業務システム開発に携わる</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  80-120時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">HTML/CSS</span>
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">React</span>
+                  <span class="skill-chip">Git/Github</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>コーポレートサイト開発、Webアプリ制作</p>
+              </div>
+            </div>
+
+            <!-- Card 2: フロントエンドエンジニア -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>フロントエンドエンジニア</h4>
+                <p>UI/UX重視の画面設計・構築</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  80-120時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">HTML/CSS</span>
+                  <span class="skill-chip">JavaScript</span>
+                  <span class="skill-chip">React</span>
+                  <span class="skill-chip">Photoshop/Canva</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>WebサイトやWebアプリの画面実装</p>
+              </div>
+            </div>
+
+            <!-- Card 3: バックエンドエンジニア -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>バックエンドエンジニア</h4>
+                <p>ロジック・データ処理中心の開発</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級〜上級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  100-150時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">PythonまたはJava</span>
+                  <span class="skill-chip">SQL</span>
+                  <span class="skill-chip">Django/Spring</span>
+                  <span class="skill-chip">Docker</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>業務システム開発、API開発</p>
+              </div>
+            </div>
+
+            <!-- Card 4: Javaプログラマーコース -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>Javaプログラマーコース</h4>
+                <p>Javaエンジニアとして就職を目指す方</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  約80時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">Java基礎</span>
+                  <span class="skill-chip">Java Bronze対策</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>
+                  Javaプログラマー（業務系・基幹系システム開発）、システムエンジニア、テストエンジニア
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 5: Javaアプリケーションエンジニアコース -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>Javaアプリケーションエンジニアコース</h4>
+                <p>Web系開発のエンジニアを目指したい方</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級〜上級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  約148時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">Java</span
+                  ><span class="skill-chip">HTML</span
+                  ><span class="skill-chip">CSS</span
+                  ><span class="skill-chip">JavaScript</span
+                  ><span class="skill-chip">SQL</span
+                  ><span class="skill-chip">Webアプリ開発</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>
+                  Webアプリケーションエンジニア、フロントエンドエンジニア、バックエンドエンジニア、フルスタックエンジニア（初級）
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 6: PHPプログラマーコース -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>PHPプログラマーコース</h4>
+                <p>PHPに特化してWebサイト制作や動的処理を学べる</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  約80時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">PHP</span
+                  ><span class="skill-chip">HTML</span
+                  ><span class="skill-chip">CSS</span
+                  ><span class="skill-chip">JavaScript</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>
+                  PHPエンジニア（Webサイト・ECサイト構築）、WordPress開発者、Webフロントエンドエンジニア
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 7: Pythonプログラマーコース -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>Pythonプログラマーコース</h4>
+                <p>AIやデータ分析に興味のある方</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">中級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  約80時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">Python</span
+                  ><span class="skill-chip">HTML</span
+                  ><span class="skill-chip">CSS</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>
+                  Pythonエンジニア（自動化スクリプト、データ処理）、AIエンジニア補助、データ分析補助
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 8: AWSインフラエンジニアコース -->
+            <div class="course-card">
+              <div class="course-card-header">
+                <h4>AWSインフラエンジニアコース</h4>
+                <p>インフラやクラウドエンジニアを目指す方</p>
+              </div>
+              <div class="course-card-meta">
+                <span class="difficulty-tag">初級〜中級</span>
+                <span class="duration">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  約20時間
+                </span>
+              </div>
+              <div class="course-card-body">
+                <h5>主な学習スキル：</h5>
+                <div class="course-card-skills">
+                  <span class="skill-chip">AWS (インフラ・クラウド入門)</span>
+                </div>
+              </div>
+              <div class="course-card-footer">
+                <span>💼</span>
+                <p>
+                  インフラエンジニア（AWS補助）、クラウド運用エンジニア、ヘルプデスク＋クラウド業務
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Roadmap Section -->
+      <section class="roadmap-section">
+        <div class="container">
+          <div class="skills-header">
+            <h2 class="section-title">おすすめ学習ルート</h2>
+            <p class="section-subtitle">
+              未経験からWebアプリケーションエンジニアを目指すためのモデルプランです。
+              <br />
+              あなたのゴールに合わせて、最適な学習プランを一緒に設計します。
+            </p>
+          </div>
+          <div class="roadmap-container">
+            <!-- Step 1 -->
+            <div class="roadmap-step left">
+              <div class="roadmap-content">
+                <h3 class="roadmap-step-title">Step 1: フロントエンドの基礎</h3>
+                <p class="roadmap-step-course">
+                  フロントエンドエンジニアコース
+                </p>
+                <p class="roadmap-step-desc">
+                  まず、HTML/CSSとJavaScriptでWebの見た目を作るスキルを習得。ユーザーが直接触れる部分を構築できるようになります。
+                </p>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="roadmap-step right">
+              <div class="roadmap-content">
+                <h3 class="roadmap-step-title">
+                  Step 2: バックエンドとデータベース
+                </h3>
+                <p class="roadmap-step-course">バックエンドエンジニアコース</p>
+                <p class="roadmap-step-desc">
+                  次に、JavaやPythonでサーバー側のロジックを学び、SQLでデータベースを操作。アプリケーションの「頭脳」を作ります。
+                </p>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="roadmap-step left">
+              <div class="roadmap-content">
+                <h3 class="roadmap-step-title">Step 3: フルスタック開発へ</h3>
+                <p class="roadmap-step-course">
+                  Javaアプリケーションエンジニアコース
+                </p>
+                <p class="roadmap-step-desc">
+                  最後に、フロントエンドとバックエンドの知識を統合し、一つの完成したWebアプリケーションを開発。ポートフォリオを充実させます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Final CTA Section (Tái sử dụng từ trang chủ) -->
+      <section id="contact" class="final-cta-section">
+        <div class="container animate-on-scroll">
+          <h2 class="final-cta-title">
+            あなたらしいキャリアの第一歩を、<br />一緒に見つけましょう。
+          </h2>
+          <p>どんな小さな疑問でも大歓迎です。今なら無料相談受付中！</p>
+          <a href="#" class="cta-button-main cta-button-animated">
+            無料キャリア相談を予約する
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14m-7-7 7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (Tái sử dụng từ trang chủ) -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 New Business Career Create LLC. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript File (Tái sử dụng từ trang chủ) -->
+    <script src="assets/js/script.js" defer></script>
+  </body>
+</html>

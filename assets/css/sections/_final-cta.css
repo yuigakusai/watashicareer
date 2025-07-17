@@ -1,0 +1,26 @@
+/* --- File: sections/_final-cta.css --- */
+.final-cta-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  padding: 100px 0;
+  background: var(--gradient-main);
+  text-align: center;
+  color: white;
+}
+.final-cta-title {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  line-height: 1.4;
+}
+.final-cta-section p {
+  font-size: 18px;
+  margin-top: 16px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+.final-cta-section .cta-button-main {
+  background: white;
+  color: var(--accent-secondary);
+}

@@ -1,0 +1,39 @@
+/* --- File: sections/_empathy.css --- */
+.empathy-section {
+  padding: 100px 0;
+  background-color: white;
+}
+.empathy-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto 48px auto;
+}
+.stat-card {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(169, 92, 141, 0.3);
+}
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent-secondary);
+  line-height: 1;
+}
+.stat-number span {
+  font-size: 24px;
+}
+.stat-description {
+  margin-top: 8px;
+  font-size: 16px;
+  color: var(--accent-secondary);
+}
+.empathy-closing {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}

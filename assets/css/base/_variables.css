@@ -1,0 +1,14 @@
+/* --- File: base/_variables.css --- */
+:root {
+  --bg-main: #fefbf6;
+  --bg-secondary: #f9f1f4;
+  --text-dark: #4e4247;
+  --text-light: #ffffff;
+  --accent-primary: #e5a4cb;
+  --accent-secondary: #b6418b;
+  --border-color: #c474a2;
+  --gradient-main: linear-gradient(135deg, #e08bb6 10%, #a95c8d 100%);
+  --font-body: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo",
+    sans-serif;
+  --font-heading: "Lora", "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", serif;
+}
